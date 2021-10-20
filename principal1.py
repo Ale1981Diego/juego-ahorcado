@@ -140,10 +140,10 @@ def main():
         else:
             dibujarSalida(screen, letraAzar, items, eleccionUsuario, eleccionCompu, puntos, puntosPorItem, puntosParciales, segundos)
 
-            if segundos < 30:
-                super.play() # Si contesta antes de que el juego llegue a los 60 segundos
-            else:
+            if segundos > 30 or punto < 50:
                 sonidoFinal.play() # Si supera los 60 segundos
+            else:
+                super.play() # Si contesta antes de que el juego llegue a los 60 segundos
 
         pygame.display.flip()
 
